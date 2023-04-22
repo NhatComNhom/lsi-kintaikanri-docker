@@ -21,13 +21,13 @@
                 <?php
                     if (isset($_GET["error"])) {
                         if ($_GET["error"] == "emptyinput") {
-                            echo "<p class='text-warning'>Fill in all fields!</p>";
+                            echo "<p class='text-warning'>全部入れてください</p>";
                         } else if ($_GET["error"] == "invaliduid") {
-                            echo "<p class='text-warning'>Choose a proper username!</p>";
+                            echo "<p class='text-warning'>このユーザーネームは使用された!</p>";
                         } else if ($_GET["error"] == "invalidemail") {
-                            echo "<p class='text-warning'>Choose a proper email!</p>";
+                            echo "<p class='text-warning'>このメールは使用された!</p>";
                         } else if ($_GET["error"] == "pwddontmatch") {
-                            echo "<p class='text-warning'>Password doesn't match!</p>";
+                            echo "<p class='text-warning'>パスワードは統一していない</p>";
                         } else if ($_GET["error"] == "usernametaken") {
                             echo "<p class='text-warning'>User already exists!</p>";
                         } else if ($_GET["error"] == "stmtfailed") {
@@ -35,27 +35,27 @@
                         } else if ($_GET["error"] == "createuserfailed") {
                             echo "<p class='text-warning'>Something went wrong, try again!</p>";
                         }  else if ($_GET["error"] == "none") {
-                            echo "<script>alert('Your Register Sucessfully! Now Login');window.location.href='login.php';</script>";
+                            echo "<script>alert('登録完了です');window.location.href='login.php';</script>";
                         }
                     }
                 ?>
                 <div class="form-group mb-3">
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <input type="email" class="form-control" id="email" placeholder="メール" name="email">
                 </div>
                 <div class="form-group mb-3">
-                    <input type="text" class="form-control" id="fullname" placeholder="Enter fullname" name="name">
+                    <input type="text" class="form-control" id="fullname" placeholder="姓名" name="name">
                 </div>
                 <div class="form-group mb-3">
-                    <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+                    <input type="text" class="form-control" id="username" placeholder="ユーザーネーム" name="username">
                 </div>
                 <div class="form-group mb-3">
-                    <input type="password" class="form-control" id="password" placeholder="Enter password" name="pwd">
+                    <input type="password" class="form-control" id="password" placeholder="パスワード" name="pwd">
                 </div>
                 <div class="form-group mb-3">
-                    <input type="password" class="form-control" id="cpassword" placeholder="Confirm password" name="cpwd">
+                    <input type="password" class="form-control" id="cpassword" placeholder="パスワード確認" name="cpwd">
                 </div>
                 <div class="form-group mb-3">        
-                    <button type="input" name="submit" class="btn btn-primary text-uppercase" id="form-submit">register now</button>
+                    <button type="input" name="submit" class="btn btn-primary text-uppercase" id="form-submit">登録する</button>
                 </div>
             </div>  
         </form>
