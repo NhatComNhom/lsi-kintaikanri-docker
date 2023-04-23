@@ -1,4 +1,4 @@
-FROM php:8.2.0-apache
+FROM php:7.4-apache
 
 WORKDIR /var/www/html
 
@@ -11,4 +11,3 @@ RUN apt-get update && apt-get -y install libpq-dev
 RUN docker-php-ext-install pdo_pgsql
 
 ADD ./php/php.ini /usr/local/etc/php/php.ini
-
