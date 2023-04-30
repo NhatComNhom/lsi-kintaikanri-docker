@@ -33,25 +33,22 @@ function pwdMatch($password, $cpassword) {
 }
 
 function uidExists($conn, $username, $email) {
-    $sql = "SELECT * FROM tbl_employees WHERE username = ? OR email = ?";
-    $stmt = pg_prepare($conn, "select_user_query", $sql);
+    $sql = "SELECT * FROM tbl_employees WHERE username = $1 OR email = $2;";
+    $stmt = pg_prepare($conn, "uid_exists", $sql);
     if (!$stmt) {
         header('location:../register.php?error=stmtfailed');
         exit();
     }
 
-    $result = pg_execute($conn, "select_user_query", array($username, $email));
-    
-    $row = pg_fetch_assoc($result);
+    $resultData = pg_execute($conn, "uid_exists", array($username, $email));
 
-    if ($row) {
+    if ($row = pg_fetch_assoc($resultData)) {
         return $row;
     } else {
         return false;
     }
 
-    pg_free_result($result);
-    pg_free_result($stmt);
+    pg_free_result($resultData);
 }
 
 function createUser($conn, $email, $name, $username, $password) {
@@ -65,7 +62,12 @@ function createUser($conn, $email, $name, $username, $password) {
 
     $hashPwd = password_hash($password, PASSWORD_DEFAULT);
 
-    pg_execute($conn, "create_user_query", array($name, $username, $email, $hashPwd, $role));
+    $result = pg_execute($conn, "create_user_query", array($name, $username, $email, $hashPwd, $role));
+    if (!$result) {
+        header('location:../register.php?error=createuserfailed');
+        exit();
+    }
+    
     header('location:../register.php?error=none');
     exit();
 }
@@ -104,7 +106,6 @@ function loginUser($conn, $username, $password) {
             echo "<script>alert('Login Successfully!');window.location.href='../attendance.php';</script>";
         }
         exit();
-
     }
 }
 

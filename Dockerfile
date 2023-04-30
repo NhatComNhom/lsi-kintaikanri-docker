@@ -4,10 +4,7 @@ WORKDIR /var/www/html
 
 COPY src/ /var/www/html/
 
-# RUN apt-get update \
-#     && docker-php-ext-install mysqli
-
-RUN apt-get update && apt-get -y install libpq-dev
-RUN docker-php-ext-install pdo_pgsql
+RUN apt-get update && apt-get install -y libpq-dev \
+&& docker-php-ext-install pdo pdo_pgsql pgsql mysqli
 
 ADD ./php/php.ini /usr/local/etc/php/php.ini

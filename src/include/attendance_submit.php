@@ -2,7 +2,7 @@
 // Start session
 session_start();
 
-include "../database/connect.php";
+include "dbh.inc.php";
 
 // Check if user is logged in
 if (!isset($_SESSION['username'])) {
@@ -33,7 +33,7 @@ $time = date("H:i");
 
 // Check connection
 if (!$conn) {
-    die("Connection failed: " . pg_last_error($conn));
+    die("Connection failed: " . pg_last_error());
 }
 
 // Get user ID from session
@@ -53,7 +53,7 @@ $sql = "INSERT INTO tbl_checkinout (user_id, action, check_time, latitude, longi
 if (pg_query($conn, $sql)) {
     $_SESSION['message'] = "Attendance recorded successfully.";
 } else {
-    $_SESSION['message'] = "Error: " . pg_last_error($conn);
+    $_SESSION['message'] = "Error: " . pg_last_error();
 }
 
 //Redirect to attendance page

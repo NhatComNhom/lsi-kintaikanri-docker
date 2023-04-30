@@ -50,7 +50,7 @@
                 <button type="input" name="submit" class="btn btn-primary" id="form-submit">ログイン</button>
             </div>
             <div class="form-group mb-3">        
-                <a href="register.php" class="text-primary">登録へ</a>
+                <a href="register.php" class="text-primary">Don't Have an Account?</a>
             </div>
         </form>
     </div>  
