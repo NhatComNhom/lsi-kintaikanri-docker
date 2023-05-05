@@ -1,6 +1,6 @@
 <?php
 //local
-// $host = "25263006b898";
+// $host = "my-postgres-container";
 // $port = "5432";
 // $dbname = "lsi_kintaikanri";
 // $user = "lsi";
@@ -19,7 +19,5 @@ $conn = pg_connect("host=".$host." port=".$port." dbname=".$dbname." user=".$use
 // Check connection
 if (!$conn) {
   die("Connection failed: " . pg_last_error());
-} else {
-  echo "here we go";
 }
 ?> 
