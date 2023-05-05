@@ -17,3 +17,17 @@ body {
 #form-submit{
     width: 100%;
 }
+
+#map-iframe {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 30%;
+    z-index: 1;
+}
+
+.location_icon:hover {
+    cursor: pointer;
+}
