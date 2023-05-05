@@ -22,21 +22,21 @@
                 <?php
                     if (isset($_GET["error"])) {
                         if ($_GET["error"] == "emptyinput") {
-                            echo "<p class='text-warning'>全部埋めてください</p>";
+                            echo "<p class='text-warning'>全部埋めてください。</p>";
                         } else if ($_GET["error"] == "invaliduid") {
-                            echo "<p class='text-warning'>ほかのユーザーネームを入れてください</p>";
+                            echo "<p class='text-warning'>ほかのユーザーネームを入れてください。</p>";
                         } else if ($_GET["error"] == "invalidemail") {
-                            echo "<p class='text-warning'>ほかのEメールを入れてください</p>";
+                            echo "<p class='text-warning'>ほかのEメールを入れてください。</p>";
                         } else if ($_GET["error"] == "pwddontmatch") {
                             echo "<p class='text-warning'>パスワード同一しない！</p>";
                         } else if ($_GET["error"] == "usernametaken") {
-                            echo "<p class='text-warning'>ほかのユーザーネームを入れてください</p>";
+                            echo "<p class='text-warning'>ほかのユーザーネームを入れてください。</p>";
                         } else if ($_GET["error"] == "stmtfailed") {
                             echo "<p class='text-warning'>エラーが発生しました。もう一度お試しください。</p>";
                         } else if ($_GET["error"] == "createuserfailed") {
                             echo "<p class='text-warning'>エラーが発生しました。もう一度お試しください。</p>";
                         }  else if ($_GET["error"] == "none") {
-                            echo "<script>alert('Your Register Sucessfully! Now Login');window.location.href='login.php';</script>";
+                            echo "<script>alert('サインアップ完了でした！');window.location.href='login.php';</script>";
                         }
                     }
                 ?>
