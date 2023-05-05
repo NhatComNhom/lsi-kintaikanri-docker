@@ -1,11 +1,4 @@
 <?php
-//local
-// $host = "my-postgres-container";
-// $port = "5432";
-// $dbname = "lsi_kintaikanri";
-// $user = "lsi";
-// $password = "lsilsilsi";
-
 //render-server
 $host = "dpg-ch2fv8l269v61fd6r56g-a.singapore-postgres.render.com";
 $port = "5432";
