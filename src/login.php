@@ -37,9 +37,9 @@
             <?php
                 if (isset($_GET["error"])) {
                     if ($_GET["error"] == "emptyinput") {
-                        echo "<p class='text-warning'>Fill in all fields!</p>";
+                        echo "<p class='text-warning'>全部埋めてください。</p>";
                     } else if ($_GET["error"] == "wronglogin") {
-                        echo "<p class='text-warning'>Incorrect id or password</p>";
+                        echo "<p class='text-warning'>IDまたはパスワードが正しくありません。</p>";
                     }
                 }
             ?>
